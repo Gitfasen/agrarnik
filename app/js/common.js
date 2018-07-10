@@ -80,7 +80,7 @@ $(document).ready(function() {
 
     $(function () {
         //E-mail Ajax Send
-        $("#cForm").submit(function() { //Change
+        $("#c-Form").submit(function() { //Change
             var th = $(this);
             $.ajax({
                 type: "POST",
@@ -101,7 +101,7 @@ $(document).ready(function() {
             var th = $(this);
             $.ajax({
                 type: "POST",
-                url: "https://agrarnik.info/mail-popup.php",
+                url: "https://agrarnik.info/mail.php",
                 data: th.serialize(),
             }).done(function() {
                 swal("Спасибо", "Вы подписаны на свежий выпуск электронной газеты", "success");
