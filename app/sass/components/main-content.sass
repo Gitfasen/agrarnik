@@ -1,0 +1,43 @@
+.cover
+  margin-bottom: 20px
+.s-newspaper
+  max-width: $w-content
+  margin: 0 auto
+  transition: all 1s ease
+  &__header
+    background: rgba(6,6,6,.56)
+    padding: 1rem 0 0.5rem 0
+    line-height: 3rem
+    font-size: 1.5rem
+    color: $accent
+    width: 100%
+    text-align: center
+    text-transform: uppercase
+  &__article
+    width: 100%
+
+.wWrapper
+  background-color: #fff
+  margin-bottom: 20px
+  padding-top: 20px
+
+.otherPage
+  padding-bottom: 20px
+  &__header
+    background-color: #D7D7D7
+    padding: 30px
+    margin: 20px
+    border-radius: 5px
+  &__content
+    padding: 20px
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px)
+  .s-newspaper
+    &__header
+      font-size: 1.2rem
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px)
+  .s-newspaper
+    &__header
+      font-size: 1rem

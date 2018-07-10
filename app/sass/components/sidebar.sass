@@ -1,0 +1,92 @@
+#menu:not( .mm-menu )
+  display: none
+.mm-menu_theme-dark
+  background: rgba(6,6,6,.56)
+  .mm-wrapper_background .mm-page
+    background: none!important
+  .mm-iconbar,
+  .mm-iconbar a
+    color: #A7A5A5
+    font-size: 25px
+
+
+  .mm-panels,
+  .mm-navbars_top
+    background: transparent
+
+  img
+    padding: 0
+    margin: 0 auto
+    width: 170px
+    position: relative
+    z-index: 100
+
+  .logo
+    display: flex
+    justify-content: center
+    flex-direction: column
+    align-items: center
+    padding-left: 40px
+    span
+      color: #c1c1c1
+      letter-spacing: 2.6px
+    svg
+      width: 230px
+      height: auto
+
+  .mm-navbar__breadcrumbs
+    color: $accent
+
+  .mm-btn.mm-btn_close.mm-navbar__btn::before,
+  .mm-btn.mm-btn_prev.mm-navbar__btn::before,
+  .mm-btn.mm-btn_close.mm-navbar__btn::after
+    transition: all 0.25s ease
+
+  .mm-btn.mm-btn_close.mm-navbar__btn:hover::before,
+  .mm-btn.mm-btn_prev.mm-navbar__btn:hover::before,
+  .mm-btn.mm-btn_close.mm-navbar__btn:hover::after
+    border-color: $accent
+
+  .mm-panel_opened .mm-listview .mm-listitem,
+  .mm-panel_opened .mm-listview .mm-listitem
+    transition: all 0.5s ease
+    text-transform: uppercase
+    border-left: 2px solid transparent
+    &>a, &>span
+      padding: 20px
+    .fa
+      color: $accent
+      margin-right: 10px
+
+  &.mm-menu_selected-hover .mm-listitem:hover+span,
+  &.mm-menu_selected-hover .mm-listitem:hover
+    color: $accent
+    border-left: 2px solid $accent
+    .fa
+      color: #ffffff
+.mm-panel_opened
+  &::-webkit-scrollbar-track
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1)
+    background-color: rgba(6,6,6,.06)
+    border-radius: 10px
+  &::-webkit-scrollbar
+    width: 10px
+    background-color: rgba(6,6,6,.06)
+  &::-webkit-scrollbar-thumb
+    border-radius: 10px
+    background-color: rgba(6,6,6,.06)
+    background-image: -webkit-gradient(linear, 40% 0%, 75% 84%, from(#4D9C41), to(#19911D), color-stop(0.6, #54DE5D))
+.zoomUp,
+.zoomDown
+  cursor: pointer
+.zoomActive
+  max-width: 100%!important
+@media screen and (max-width: 800px)
+  #menu
+    display: none
+
+  #menu.cloned
+    display: block
+  .zoomUp,
+  .zoomDown
+    display: none
