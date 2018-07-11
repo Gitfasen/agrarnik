@@ -2253,17 +2253,19 @@
                 <h3 class="contact__form-title">Здесь вы можете оформить подписку на электронную газету</h3>
                 <form id="s-Form">
 
-                    <!-- Hidden Required Fields -->
-                    <input type="hidden" name="project_name" value="subscribe">
-                    <input type="hidden" name="admin_email" value="e-agrarnik@ukr.net">
-                    <input type="hidden" name="form_subject" value="|Подписка| Электронная газета">
+                    <input type="hidden" name="acyformname" value="formAcymailing1" />
+                    <input type="hidden" name="ctrl" value="sub"/>
+                    <input type="hidden" name="task" value="optin"/>
+                    <input type="hidden" name="option" value="com_acymailing"/>
+                    <input type="hidden" name="visiblelists" value=""/>
+                    <input type="hidden" name="hiddenlists" value="163"><!--value="154"{общий список подписчиков} /// value="163" {ИНТЕРАКТИВ}-->
                     <!-- END Hidden Required Fields -->
                     <div class="form-group has-success has-feedback">
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <div class="input-group-text"><i class="fa fa-user"></i></div>
                             </div>
-                            <input type="text" class="form-control" name="Имя" id="InputName" placeholder="Введите Имя">
+                            <input type="text" class="form-control" name="user[name]" placeholder="Введите Имя">
                         </div>
                     </div>
                     <div class="form-group has-success has-feedback">
@@ -2271,7 +2273,7 @@
                             <div class="input-group-prepend">
                                 <div class="input-group-text"><i class="fa fa-envelope-square"></i></div>
                             </div>
-                            <input type="email" class="form-control" id="sInputEmail" name="Email" placeholder="Введите e-mail адрес" required>
+                            <input type="email" class="form-control" name="user[email]" placeholder="Введите e-mail адрес" required>
                         </div>
                     </div>
 

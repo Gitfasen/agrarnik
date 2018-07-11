@@ -101,10 +101,10 @@ $(document).ready(function() {
             var th = $(this);
             $.ajax({
                 type: "POST",
-                url: "https://agrarnik.info/mail.php",
-                data: th.serialize(),
-            }).done(function() {
-                swal("Спасибо", "Вы подписаны на свежий выпуск электронной газеты", "success");
+                url: "https://sub.agrospravka.net/index.php?option=com_acymailing&ctrl=sub",
+                data: th.serialize()
+            }).always(function() {
+                swal("Спасибо", "Вам было отправлено письмо для подтверждения подписки. Пожалуйста, перейдите по ссылке в письме для активации подписки", "warning");
                 setTimeout(function() {
                     // Done Functions
                     th.trigger("reset");
