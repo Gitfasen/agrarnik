@@ -114,31 +114,29 @@ $(document).ready(function() {
         });
     });
 
-    function sPopup() {
-        var form = document.getElementById('Sform');
-        swal({
-            title: "Хотите получать информацию о новых выпусках электронной газеты ?",
-            icon: "warning",
-            buttons: ["Отмена", "Подписаться"],
-        })
-            .then((willDelete) => {
-                if (willDelete) {
-                    swal({content: form, button: false}).then($('#Sform').css('display', 'block'));
-                }
-            });
-    };
+
 
     $(function () {
-        // var date = new Date();
-        // var minutes = 30;
-        // date.setTime(date.getTime() + (minutes * 60 * 1000));
-        // if (!$.cookie('Sform')) {
-            setTimeout(sPopup, 15000);
-        // }
-        // $.cookie('Sform', true, {
-        // 	expires: date,
-        // 	path: '/'
-        // });
+
+        if (!$.cookie('Sform')) {
+            setTimeout(function () {
+                var form = document.getElementById('Sform');
+                swal({
+                    title: "Хотите получать информацию о новых выпусках электронной газеты ?",
+                    icon: "warning",
+                    buttons: ["Отмена", "Подписаться"],
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            swal({content: form, button: false}).then($('#Sform').css('display', 'block'));
+                        }
+                    });
+            }, 15000);
+        }
+        $.cookie('Sform', true, {
+        	expires: 1,
+        	path: '/'
+        });
 
     });
 
