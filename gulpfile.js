@@ -52,7 +52,6 @@ gulp.task('js', function() {
 		'app/libs/jQuery.mmenu/dist/jquery.mmenu.all.js',
 		'app/libs/jQuery.mmenu/src/jquery.mmenu.debugger.js',
 		'app/libs/magnific-popup/dist/jquery.magnific-popup.js',
-		'app/libs/page-scroll-to-id/jquery.malihu.PageScroll2id.js',
 		'app/libs/jquery.cookie/jquery.cookie.js',
 		'app/js/common.js', // Always at the end
 		])
