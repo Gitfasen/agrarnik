@@ -53,6 +53,8 @@ gulp.task('js', function() {
 		'app/libs/jQuery.mmenu/src/jquery.mmenu.debugger.js',
 		'app/libs/magnific-popup/dist/jquery.magnific-popup.js',
 		'app/libs/jquery.cookie/jquery.cookie.js',
+		'app/libs/modal-video/js/jquery-modal-video.js',
+		'app/libs/modal-video/js/modal-video.js',
 		'app/js/common.js', // Always at the end
 		])
 	.pipe(concat('scripts.min.js'))

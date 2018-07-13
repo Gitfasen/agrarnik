@@ -117,28 +117,36 @@ $(document).ready(function() {
 
 
     $(function () {
-
-        if (!$.cookie('Sform')) {
-            setTimeout(function () {
-                var form = document.getElementById('Sform');
-                swal({
-                    title: "Хотите получать информацию о новых выпусках электронной газеты ?",
-                    icon: "warning",
-                    buttons: ["Отмена", "Подписаться"],
-                })
-                    .then((willDelete) => {
-                        if (willDelete) {
-                            swal({content: form, button: false}).then($('#Sform').css('display', 'block'));
-                        }
-                    });
-            }, 15000);
+        var cookie = $.cookie('Sform');
+        if ( cookie === false) {
+            console.log('ok');
+            //  setTimeout(function () {
+            //     var form = document.getElementById('Sform');
+            //     swal({
+            //         title: "Хотите получать информацию о новых выпусках электронной газеты ?",
+            //         icon: "warning",
+            //         buttons: ["Отмена", "Подписаться"],
+            //     })
+            //         .then((willDelete) => {
+            //             if (willDelete) {
+            //                 swal({content: form, button: false}).then($('#Sform').css('display', 'block'));
+            //             }
+            //         });
+            //      $.cookie('Sform', true, {
+            //          expires: 1,
+            //          path: '/'
+            //      });
+            // }, 1000)
+            $.cookie('Sform', true, {
+                expires: 1,
+                path: '/'
+            });
         }
-        $.cookie('Sform', true, {
-        	expires: 1,
-        	path: '/'
-        });
+
 
     });
+
+    $(".js-modal-video").modalVideo({channel:'youtube'});
 
 });
 

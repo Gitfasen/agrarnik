@@ -15,6 +15,47 @@
   margin: 20px auto 40px
   height: 1px
   background: rgba(0,0,0,.1)
+.preview
+  position: relative
+  border: 2px solid #00753E
+  border-radius: 3px
+  position: relative
+  &::before
+    content: ''
+    position: absolute
+    z-index: 1
+    opacity: 0.1
+    width: 100%
+    height: 100%
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    background-color: #00753E
+    transition: all 0.25s ease
+  &:hover::before
+    opacity: 0.3
+  &-bt
+    position: absolute
+    font-size: 30px
+    z-index: 2
+    border: 4px solid #ffffff
+    padding-left: 5px
+    border-radius: 100%
+    top: 50%
+    left: 50%
+    margin-top: -50px
+    margin-left: -50px
+    width: 100px
+    height: 100px
+    display: flex
+    justify-content: center
+    align-items: center
+    color: #ffffff
+    transition: all 0.25s ease
+    &:hover
+      transform: scale(1.1)
+      background-color: rgba(255, 255, 255, 0.27)
 
 @media only screen and (max-width : 480px)
   .videoPage-header__video

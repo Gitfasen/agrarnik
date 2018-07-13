@@ -110,7 +110,12 @@
     transition: opacity 0.4s
     p
       text-overflow: ellipsis
-
+@media only screen and (max-width : 768px)
+  .news
+    &__item
+      margin: 0 0 20px 0.3%
+    &__inner
+      padding-top: 250px
 @media only screen and (max-width : 480px)
   .otherPage__header-mainNew
     min-height: 300px
@@ -120,3 +125,4 @@
   .news
     &__item
       width: 100%
+      margin: 0 0 20px 0.3%
