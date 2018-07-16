@@ -117,35 +117,34 @@ $(document).ready(function() {
 
 
     $(function () {
-        var cookie = $.cookie('Sform');
-        if ( cookie === false) {
-            console.log('ok');
-            //  setTimeout(function () {
-            //     var form = document.getElementById('Sform');
-            //     swal({
-            //         title: "Хотите получать информацию о новых выпусках электронной газеты ?",
-            //         icon: "warning",
-            //         buttons: ["Отмена", "Подписаться"],
-            //     })
-            //         .then((willDelete) => {
-            //             if (willDelete) {
-            //                 swal({content: form, button: false}).then($('#Sform').css('display', 'block'));
-            //             }
-            //         });
-            //      $.cookie('Sform', true, {
-            //          expires: 1,
-            //          path: '/'
-            //      });
-            // }, 1000)
-            $.cookie('Sform', true, {
-                expires: 1,
-                path: '/'
-            });
-        }
 
+         setTimeout(function () {
+            var form = document.getElementById('Sform');
+            swal({
+                title: "Хотите получать информацию о новых выпусках электронной газеты ?",
+                icon: "warning",
+                buttons: ["Отмена", "Подписаться"],
+            })
+                .then(function(willDelete) {
+                    if (willDelete) {
+                        swal({content: form, button: false}).then($('#Sform').css('display', 'block'));
+                    }
+                });
+             $.cookie('Sform', true, {
+                 expires: 1,
+                 path: '/'
+             });
+         }, 25000);
 
     });
 
+    $("a[href*='#']").mPageScroll2id({
+        scrollSpeed: 500,
+        scrollingEasing: "easeOutQuint",
+        scrollEasing: "easeInOutQuint",
+        autoScrollSpeed: false,
+        layout: "vertical"
+    });
     $(".js-modal-video").modalVideo({channel:'youtube'});
 
 });

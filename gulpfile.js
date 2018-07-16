@@ -15,7 +15,7 @@ var gulp          = require('gulp'),
     	include        = require('gulp-html-tag-include'),
 		bulkSass = require('gulp-sass-bulk-import'),
     	imagemin       = require('gulp-imagemin'),
-		rsync         = require('gulp-rsync');
+        htmlmin = require('gulp-htmlmin');
 
 gulp.task('browser-sync', function() {
 	browserSync({
@@ -32,8 +32,10 @@ gulp.task('browser-sync', function() {
 gulp.task('html', function() {
     return gulp.src(['app/html/*.html'])
         .pipe(include())
+        .pipe(htmlmin({collapseWhitespace: true}))
         .pipe(gulp.dest('app'));
 });
+
 
 gulp.task('styles', function() {
 	return gulp.src('app/'+syntax+'/*.'+syntax+'')
@@ -55,13 +57,16 @@ gulp.task('js', function() {
 		'app/libs/jquery.cookie/jquery.cookie.js',
 		'app/libs/modal-video/js/jquery-modal-video.js',
 		'app/libs/modal-video/js/modal-video.js',
+		'app/libs/page-scroll-to-id/jquery.malihu.PageScroll2id.js',
 		'app/js/common.js', // Always at the end
 		])
 	.pipe(concat('scripts.min.js'))
-	// .pipe(uglify()) // Mifify js (opt.)
+	.pipe(uglify()) // Mifify js (opt.)
+    .on('error', function (err) { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
 	.pipe(gulp.dest('app/js'))
 	.pipe(browserSync.reload({ stream: true }))
 });
+
 
 
 gulp.task('watch', ['html', 'styles', 'js', 'browser-sync'], function() {
