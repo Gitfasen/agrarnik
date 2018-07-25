@@ -106,3 +106,4 @@ gulp.task('build', ['removedist', 'styles', 'js', 'html', 'imagemin'], function(
 gulp.task('removedist', function() { return del.sync('dist'); });
 
 gulp.task('default', ['watch']);
+

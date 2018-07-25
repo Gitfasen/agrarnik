@@ -1,5 +1,9 @@
 #menu:not( .mm-menu )
   display: none
+.mPS2id-highlight-first,
+.mPS2id-highlight
+  color: $accent!important
+  border-left: 2px solid $accent
 .mm-menu_theme-dark
   background: rgba(6,6,6,.56)
   height: 100vh
@@ -95,3 +99,29 @@
   .zoomUp,
   .zoomDown
     display: none
+@media only screen and (max-width : 480px)
+  .mm-listitem,
+  .mm-listview
+    font-size: 13px
+@media only screen and (max-width : 320px)
+  .mm-listitem,
+  .mm-listview
+    font-size: 13px
+  #mm-0
+    .mm-listitem
+      a:not(.mm-btn_next)
+        margin-right: 35px!important
+        padding: 20px 10px 20px 10px!important
+      .mm-btn_next
+        width: 35px!important
+        padding: 20px 10px 20px 10px!important
+  #mm-1
+    .mm-listitem
+      a:not(.mm-btn_next)
+        margin-right: 40px!important
+        text-transform: capitalize
+        padding: 20px 10px 20px 10px!important
+      .mm-btn_next
+        width: 50px!important
+        padding: 20px 10px 20px 10px!important
+

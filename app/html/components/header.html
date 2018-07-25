@@ -11,20 +11,38 @@
     <meta property="og:image" content="/wrapper.jpg">
     <meta property="og:type" content="купить семена, купить СЗР, купить удобрения, купить технику, купить запчасти и комлектующие, купить оборудование"/>
 
-    <!-- Not Cashed -->
-    <meta http-equiv="Cache-control" content="no-cache">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="-1">
-
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width">
     <link rel="icon" href="img/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png">
     <meta name="theme-color" content="#000">
-
-    <link rel="stylesheet" href="css/main.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 
+    <style>
+        .loader {
+            background: none repeat scroll 0 0 #F7F7F7;
+            bottom: 0;
+            height: 100%;
+            left: 0;
+            position: fixed;
+            right: 0;
+            top: 0;
+            width: 100%;
+            z-index: 9999;
+        }
+
+        .loader_inner {
+            background: url(img/preloader.gif) no-repeat center #F7F7F7;
+            background-size: cover;
+            height: 256px;
+            width: 256px;
+            left: 50%;
+            top: 50%;
+            margin-top: -128px;
+            margin-left: -128px;
+            position: absolute;
+        }
+    </style>
 
 </head>
 
@@ -51,7 +69,7 @@
             <span>ЭЛЕКТРОННАЯ ГАЗЕТА</span>
         </p>
         <ul>
-            <li><a href="#cover" class="divider"><span><i class="fa fa-cubes"></i>Газета</span></a>
+            <li><a href="#cover" class="divider"><span><i class="fa fa-cubes"></i>Реклама</span></a>
                 <ul>
                     <li><a href="#semena"><span>Семена</span></a>
 
