@@ -20,7 +20,7 @@ $(document).ready(function() {
                 add 		: true,
                 size		: 40,
                 top 		: [
-                    '<a href="#cover"><span class="main-icon-sidebar fa fa-home"></span></a>'
+                    '<a href="/test"><span class="main-icon-sidebar fa fa-home"></span></a>'
                 ],
                 bottom 		: [
                     '<a class="zoomUp"><span class="fa fa-search-plus"></span></a>',
