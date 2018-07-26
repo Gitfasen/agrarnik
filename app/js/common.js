@@ -1,23 +1,5 @@
 $(document).ready(function() {
 
-    //Fix mobile AddressBar
-    function hideAddressBar() {
-        setTimeout(function () {
-            document.body.style.height = window.outerHeight + 'px';
-            document.getElementById('menu').style.height = window.outerHeight + 'px';
-            setTimeout(function () {
-                window.scrollTo(0, 1);
-            }, 1100);
-        }, 1000);
-        return false;
-    }
-    window.onload = function () {
-        hideAddressBar();
-        window.addEventListener("orientationchange", function () {
-            hideAddressBar();
-        }, false);
-    };
-
     //Preloader
     $(".loader_inner").fadeOut();
     $(".loader").delay(400).fadeOut("slow");
@@ -32,13 +14,13 @@ $(document).ready(function() {
             },
             counters	: true,
             searchfield : {
-                placeholder		: 'Поиск'
+                placeholder		: 'Поиск',
             },
             iconbar		: {
                 add 		: true,
                 size		: 40,
                 top 		: [
-                    '<a href="#cover"><span class="main-icon-sidebar fa fa-bars"></span></a>'
+                    '<a href="#cover"><span class="main-icon-sidebar fa fa-home"></span></a>'
                 ],
                 bottom 		: [
                     '<a class="zoomUp"><span class="fa fa-search-plus"></span></a>',
@@ -69,16 +51,16 @@ $(document).ready(function() {
                     content		: [ 'prev', 'breadcrumbs', 'close']
                 }
             ]
-        }, {
-            searchfield : {
-                clear 		: true
-            },
-            navbars		: {
-                breadcrumbs	: {
-                    removeFirst	: true
+            }, {
+                searchfield : {
+                    clear 		: true
+                },
+                navbars		: {
+                    breadcrumbs	: {
+                        removeFirst	: true
+                    }
                 }
-            }
-        });
+            });
     });
 
     // Изменяет номер газеты в шабке страниц
@@ -144,17 +126,13 @@ $(document).ready(function() {
             title: "Хотите получать информацию о новых выпусках электронной газеты ?",
             icon: "warning",
             buttons: ["Отмена", "Подписаться"],
-        })
-            .then(function(willDelete) {
-                if (willDelete) {
-                    swal({content: form, button: false}).then($('#Sform').css('display', 'block'));
-                }
-            });
-         $.cookie('Sform', true, {
-             expires: 1,
-             path: '/'
-         });
-    }, 30000);
+        }).then(function(willDelete) {
+            if (willDelete) {
+                swal({content: form, button: false}).then($('#Sform').css('display', 'block'));
+            }
+        });
+
+    }, 50000);
 
     // Page Scroll To ID
     $("a[href*='#']").mPageScroll2id({

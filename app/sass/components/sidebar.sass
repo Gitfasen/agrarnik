@@ -1,5 +1,12 @@
-#menu:not( .mm-menu )
-  display: none
+#menu
+  transition: all 0.25s ease
+  &:not( .mm-menu )
+    display: none
+  &:not( .mm-menu_opened)
+    .mm-navbars_top, .mm-panels, .logo
+      opacity: 0
+    .main-icon-sidebar::before
+      content: "\f0c9"!important
 .mPS2id-highlight-first,
 .mPS2id-highlight
   color: $accent!important
@@ -88,11 +95,6 @@
   max-width: 100%!important
 
 @media screen and (max-width: 800px)
-  #menu
-    display: none
-
-  #menu.cloned
-    display: block
   .mm-listitem,
   .mm-listview
     font-size: 14px
@@ -103,6 +105,27 @@
   .mm-listitem,
   .mm-listview
     font-size: 13px
+  #mm-0
+    .mm-listitem
+      a:not(.mm-btn_next)
+        margin-right: 35px!important
+        padding: 20px 5px 20px 7px!important
+      .mm-btn_next
+        width: 35px!important
+        padding: 20px 0px 20px 0px!important
+      .mm-btn_next:after
+        right: 15px
+      .mm-counter
+        margin-right: -20px
+  #mm-1
+    .mm-listitem
+      a:not(.mm-btn_next)
+        margin-right: 40px!important
+        text-transform: capitalize
+        padding: 20px 10px 20px 10px!important
+      .mm-btn_next
+        width: 50px!important
+        padding: 20px 10px 20px 10px!important
 @media only screen and (max-width : 320px)
   .mm-listitem,
   .mm-listview
@@ -111,10 +134,14 @@
     .mm-listitem
       a:not(.mm-btn_next)
         margin-right: 35px!important
-        padding: 20px 10px 20px 10px!important
+        padding: 20px 5px 20px 7px!important
       .mm-btn_next
         width: 35px!important
-        padding: 20px 10px 20px 10px!important
+        padding: 20px 0px 20px 0px!important
+      .mm-btn_next:after
+        right: 15px
+      .mm-counter
+        margin-right: -20px
   #mm-1
     .mm-listitem
       a:not(.mm-btn_next)
