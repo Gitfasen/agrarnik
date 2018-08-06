@@ -45,7 +45,7 @@ gulp.task('styles', function() {
 	.pipe(autoprefixer(['last 15 versions']))
 	.pipe(cleancss( {level: { 1: { specialComments: 0 } } })) // Opt., comment out when debugging
 	.pipe(gulp.dest('app/css'))
-	.pipe(browserSync.stream())
+	.pipe(browserSync.stream());
 });
 
 gulp.task('js', function() {
@@ -53,9 +53,9 @@ gulp.task('js', function() {
 		'app/libs/jquery/dist/jquery.min.js',
 		'app/libs/jQuery.mmenu/dist/jquery.mmenu.all.js',
 		'app/libs/jQuery.mmenu/src/jquery.mmenu.debugger.js',
-		'app/libs/magnific-popup/dist/jquery.magnific-popup.js',
-		'app/libs/jquery.cookie/jquery.cookie.js',
+		'app/libs/jQuery.mmenu/dist/wrappers/bootstrap/jquery.mmenu.bootstrap4.js',
 		'app/libs/modal-video/js/jquery-modal-video.js',
+		'app/libs/magnific-popup/dist/jquery.magnific-popup.js',
 		'app/libs/modal-video/js/modal-video.js',
 		'app/libs/page-scroll-to-id/jquery.malihu.PageScroll2id.js',
 		'app/js/common.js', // Always at the end
@@ -64,7 +64,7 @@ gulp.task('js', function() {
 	.pipe(uglify()) // Mifify js (opt.)
     .on('error', function (err) { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
 	.pipe(gulp.dest('app/js'))
-	.pipe(browserSync.reload({ stream: true }))
+	.pipe(browserSync.reload({ stream: true }));
 });
 
 
@@ -73,7 +73,7 @@ gulp.task('watch', ['html', 'styles', 'js', 'browser-sync'], function() {
     gulp.watch('app/html/**/*.html', ['html']);
 	gulp.watch('app/'+syntax+'/**/*.'+syntax+'', ['styles']);
 	gulp.watch(['libs/**/*.js', 'app/js/common.js'], ['js']);
-	gulp.watch('app/*.html', browserSync.reload)
+	gulp.watch('app/*.html', browserSync.reload);
 });
 
 gulp.task('imagemin', function() {

@@ -7,6 +7,9 @@
       opacity: 0
     .main-icon-sidebar::before
       content: "\f0c9"!important
+    .mm-iconbar__bottom
+      transition: all 0.25s ease
+      transform: translateY(270px)
 .mPS2id-highlight-first,
 .mPS2id-highlight
   color: $accent!important
@@ -105,50 +108,31 @@
   .mm-listitem,
   .mm-listview
     font-size: 13px
-  #mm-0
-    .mm-listitem
-      a:not(.mm-btn_next)
-        margin-right: 35px!important
-        padding: 20px 5px 20px 7px!important
-      .mm-btn_next
-        width: 35px!important
-        padding: 20px 0px 20px 0px!important
-      .mm-btn_next:after
-        right: 15px
-      .mm-counter
-        margin-right: -20px
-  #mm-1
-    .mm-listitem
-      a:not(.mm-btn_next)
-        margin-right: 40px!important
-        text-transform: capitalize
-        padding: 20px 10px 20px 10px!important
-      .mm-btn_next
-        width: 50px!important
-        padding: 20px 10px 20px 10px!important
+  .mm-listitem
+    a:not(.mm-btn_next)
+      padding: 20px 5px 20px 7px!important
+    .mm-btn_next
+      padding: 20px 0px 20px 0px!important
+    .mm-btn_next:after
+      right: 15px
+    .mm-counter
+      margin-right: -20px
+    span
+      padding-left: 5px!important
 @media only screen and (max-width : 320px)
   .mm-listitem,
   .mm-listview
     font-size: 13px
-  #mm-0
-    .mm-listitem
-      a:not(.mm-btn_next)
-        margin-right: 35px!important
-        padding: 20px 5px 20px 7px!important
-      .mm-btn_next
-        width: 35px!important
-        padding: 20px 0px 20px 0px!important
-      .mm-btn_next:after
-        right: 15px
-      .mm-counter
-        margin-right: -20px
-  #mm-1
-    .mm-listitem
-      a:not(.mm-btn_next)
-        margin-right: 40px!important
-        text-transform: capitalize
-        padding: 20px 10px 20px 10px!important
-      .mm-btn_next
-        width: 50px!important
-        padding: 20px 10px 20px 10px!important
+  .mm-listitem
+    a:not(.mm-btn_next)
+      padding: 20px 5px 20px 7px!important
+    .mm-btn_next
+      padding: 20px 0px 20px 0px!important
+    .mm-btn_next:after
+      right: 15px
+    .mm-counter
+      margin-right: -20px
+    span
+      padding-left: 5px!important
+
 

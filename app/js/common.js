@@ -7,22 +7,22 @@ $(document).ready(function() {
     //MMENU
     $(function() {
         $('nav#menu').mmenu({
+            wrappers: ["bootstrap4"],
             extensions	: [ 'theme-dark' ],
             pageScroll : true,
+            scrollBugFix: { fix: true},
             setSelected	: {
                 hover: true
             },
             counters	: true,
-            searchfield : {
-                placeholder		: 'Поиск',
-            },
             iconbar		: {
                 add 		: true,
                 size		: 40,
                 top 		: [
-                    '<a href="/test"><span class="main-icon-sidebar fa fa-home"></span></a>'
+                    '<a href="#mm-0"><span class="main-icon-sidebar fa fa-home"></span></a>'
                 ],
                 bottom 		: [
+                    '<a class="subscribe"><span class="fa fa-rss"></span></a>',
                     '<a class="zoomUp"><span class="fa fa-search-plus"></span></a>',
                     '<a class="zoomDown"><span class="fa fa-search-minus"></span></a>',
                     '<a href="https://agrarnik.com/" title="Вернуться на сайт" ><span class="fa fa-reply"></span></a>',
@@ -46,15 +46,10 @@ $(document).ready(function() {
                 }, {
                     content		: [ ' ' ]
                 },{
-                    content		: [ 'searchfield' ]
-                },{
                     content		: [ 'prev', 'breadcrumbs', 'close']
                 }
             ]
             }, {
-                searchfield : {
-                    clear 		: true
-                },
                 navbars		: {
                     breadcrumbs	: {
                         removeFirst	: true
@@ -119,20 +114,22 @@ $(document).ready(function() {
     });
 
     // Popup Form Subscribe
-    setTimeout(function () {
-        var form = document.getElementById('Sform');
+    $(function () {
+        $('.subscribe').on('click', function () {
+            var form = document.getElementById('Sform');
 
-        swal({
-            title: "Хотите получать информацию о новых выпусках электронной газеты ?",
-            icon: "warning",
-            buttons: ["Отмена", "Подписаться"],
-        }).then(function(willDelete) {
-            if (willDelete) {
-                swal({content: form, button: false}).then($('#Sform').css('display', 'block'));
-            }
+            swal({
+                title: "Хотите получать информацию о новых выпусках электронной газеты ?",
+                icon: "warning",
+                buttons: ["Отмена", "Подписаться"],
+            }).then(function(willDelete) {
+                if (willDelete) {
+                    swal({content: form, button: false}).then($('#Sform').css('display', 'block'));
+                }
+            });
         });
 
-    }, 50000);
+    });
 
     // Page Scroll To ID
     $("a[href*='#']").mPageScroll2id({
@@ -145,6 +142,34 @@ $(document).ready(function() {
 
     // Video Popup
     $(".js-modal-video").modalVideo({channel:'youtube'});
+
+    $(function () {
+        var bt = document.getElementsByClassName('bt-footer');
+        for (var i = 0; i < bt.length; i++) {
+            var content = bt[i].innerHTML;
+            if (content.length < 55) {
+                $(bt[i]).css('display', 'none');
+            }
+        }
+    });
+
+    $('.popup').magnificPopup({
+        type:'iframe',
+        callbacks: {
+            open: function () {
+                if ($(".mfp-iframe").is(":visible")) {
+                    console.log('ok');
+                    $('html').css('overflow', 'hidden');
+                }
+            },
+            beforeOpen: function() {
+                this.st.mainClass = this.st.el.attr('data-effect');
+            }
+        },
+        midClick: true
+    });
+
+
 
 });
 
