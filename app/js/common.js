@@ -19,7 +19,7 @@ $(document).ready(function() {
                 add 		: true,
                 size		: 40,
                 top 		: [
-                    '<a href="#mm-0"><span class="main-icon-sidebar fa fa-home"></span></a>'
+                    '<a href="index.html"><span class="main-icon-sidebar fa fa-home"></span></a>'
                 ],
                 bottom 		: [
                     '<a class="subscribe"><span class="fa fa-rss"></span></a>',
@@ -141,7 +141,10 @@ $(document).ready(function() {
     });
 
     // Video Popup
-    $(".js-modal-video").modalVideo({channel:'youtube'});
+    $(".js-modal-video").modalVideo({
+        channel:'youtube',
+        autoplay: 1
+    });
 
     $(function () {
         var bt = document.getElementsByClassName('bt-footer');
@@ -162,8 +165,8 @@ $(document).ready(function() {
                     $('html').css('overflow', 'hidden');
                 }
             },
-            beforeOpen: function() {
-                this.st.mainClass = this.st.el.attr('data-effect');
+            close: function() {
+                $('html').css('overflow', 'scroll');
             }
         },
         midClick: true
