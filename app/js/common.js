@@ -25,7 +25,7 @@ $(document).ready(function() {
                     '<a class="subscribe"><span class="fa fa-rss"></span></a>',
                     '<a class="zoomUp"><span class="fa fa-search-plus"></span></a>',
                     '<a class="zoomDown"><span class="fa fa-search-minus"></span></a>',
-                    '<a href="https://agrarnik.com/" title="Вернуться на сайт" ><span class="fa fa-reply"></span></a>',
+                    '<a href="https://agrarnik.com/agrovopros/"><span class="fa fa-question-circle"></span></a>',
                     '<a href="https://agrarnik.com/index.php?option=com_sppagebuilder&view=page&id=7&Itemid=433" title="Архив номеров"><span class="fa fa-file-text"></span></a>',
                     '<a href="https://www.facebook.com/AgrarNikwelcome/" title="Страница Facebook" ><span class="fa fa-facebook-square"></span></a>'
                 ]
@@ -158,11 +158,18 @@ $(document).ready(function() {
 
     $('.popup').magnificPopup({
         type:'iframe',
+        srcAction: 'iframe_src',
+        iframe: {
+            markup: '<div class="mfp-iframe-scaler">'+
+            '<div class="mfp-close"></div>'+
+            '<div style="overflow: auto!important; -webkit-overflow-scrolling: touch!important;"><iframe class="mfp-iframe" frameborder="0" allowfullscreen style="width:100%; height:100%;overflow:scroll;"></iframe></div>'+
+            '</div>',
+        },
         callbacks: {
             open: function () {
                 if ($(".mfp-iframe").is(":visible")) {
-                    console.log('ok');
-                    $('html').css('overflow', 'hidden');
+                    $('html, body').css('overflow', 'hidden');
+                    $('html, body').css('overflow', 'hidden');
                 }
             },
             close: function() {
@@ -171,8 +178,6 @@ $(document).ready(function() {
         },
         midClick: true
     });
-
-
 
 });
 
