@@ -19,13 +19,13 @@ $(document).ready(function() {
                 add 		: true,
                 size		: 40,
                 top 		: [
-                    '<a href="index.html"><span class="main-icon-sidebar fa fa-home"></span></a>'
+                    '<a href="index.html" title="Вернуться в начало"><span class="main-icon-sidebar fa fa-home"></span></a>'
                 ],
                 bottom 		: [
-                    '<a class="subscribe"><span class="fa fa-rss"></span></a>',
-                    '<a class="zoomUp"><span class="fa fa-search-plus"></span></a>',
-                    '<a class="zoomDown"><span class="fa fa-search-minus"></span></a>',
-                    '<a href="https://agrarnik.com/agrovopros/"><span class="fa fa-question-circle"></span></a>',
+                    '<a class="subscribe" title="Подписаться"><span class="fa fa-rss"></span></a>',
+                    '<a class="zoomUp" title="Увеличить"><span class="fa fa-search-plus"></span></a>',
+                    '<a class="zoomDown" title="Уменьшить"><span class="fa fa-search-minus"></span></a>',
+                    '<a href="https://agrarnik.com/agrovopros/" title="Агровопрос"><span class="fa fa-question-circle"></span></a>',
                     '<a href="https://agrarnik.com/index.php?option=com_sppagebuilder&view=page&id=7&Itemid=433" title="Архив номеров"><span class="fa fa-file-text"></span></a>',
                     '<a href="https://www.facebook.com/AgrarNikwelcome/" title="Страница Facebook" ><span class="fa fa-facebook-square"></span></a>'
                 ]
@@ -59,14 +59,33 @@ $(document).ready(function() {
     });
 
     // Изменяет номер газеты в шабке страниц
-    (function () {
-        var p   = document.getElementsByClassName('nomer'),
-            txt = $('.number-nespaper').text();
+    $('.nomer').text('№14 (323)');
 
-        for (var i=0; i<p.length; i++) {
-            p[i].innerHTML = txt;
+    //Настройки для попапа страниц
+    $('.page-popup').magnificPopup({
+        type: 'image',
+    });
+    // owl-carousel
+    $('.owl-carousel').owlCarousel({
+        loop: true,
+        items: 4,
+        nav: false,
+        dots: false,
+        margin: 15,
+        autoplay: true,
+        autoplayTimeout: 7000,
+        responsive:{
+            0 :{
+                items:1
+            },
+            600 :{
+                items:3
+            },
+            1000 :{
+                items:4
+            }
         }
-    })();
+    });
 
     // Button Zoom Page
     $(function () {

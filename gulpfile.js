@@ -58,6 +58,7 @@ gulp.task('js', function() {
 		'app/libs/magnific-popup/dist/jquery.magnific-popup.js',
 		'app/libs/modal-video/js/modal-video.js',
 		'app/libs/page-scroll-to-id/jquery.malihu.PageScroll2id.js',
+		'app/libs/owl.carousel/dist/owl.carousel.min.js',
 		'app/js/common.js', // Always at the end
 		])
 	.pipe(concat('scripts.min.js'))
