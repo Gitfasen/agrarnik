@@ -37,6 +37,19 @@ body
 b, strong
 	font-weight: bold
 
+.banner
+	position: fixed
+	right: 10px
+	top: 10px
+	transform: scale(1)
+	transform-origin: 50% 50%
+	z-index: 10001
+	transition: transform .3s
+	box-sizing: border-box
+	animation: showSweetAlert .3s
+	will-change: transform
+	img
+		width: 200px
 
 
 @import "components/**/*"

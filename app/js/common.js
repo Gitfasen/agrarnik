@@ -14,20 +14,22 @@ $(document).ready(function() {
             setSelected	: {
                 hover: true
             },
-            counters	: true,
+            counters	: false,
+            dividers: {
+                "fixed": true
+            },
             iconbar		: {
                 add 		: true,
                 size		: 40,
                 top 		: [
-                    '<a href="index.html" title="Вернуться в начало"><span class="main-icon-sidebar fa fa-home"></span></a>'
-                ],
-                bottom 		: [
-                    '<a class="subscribe" title="Подписаться"><span class="fa fa-rss"></span></a>',
-                    '<a class="zoomUp" title="Увеличить"><span class="fa fa-search-plus"></span></a>',
-                    '<a class="zoomDown" title="Уменьшить"><span class="fa fa-search-minus"></span></a>',
-                    '<a href="https://agrarnik.com/agrovopros/" title="Агровопрос"><span class="fa fa-question-circle"></span></a>',
-                    '<a href="https://agrarnik.com/index.php?option=com_sppagebuilder&view=page&id=7&Itemid=433" title="Архив номеров"><span class="fa fa-file-text"></span></a>',
-                    '<a href="https://www.facebook.com/AgrarNikwelcome/" title="Страница Facebook" ><span class="fa fa-facebook-square"></span></a>'
+                    '<a href="#page" title="Закрыть"><span class="main-icon-sidebar fa fa-times"></span></a>',
+                    '<br />',
+                    '<a class="iconbar__top subscribe" title="Подписаться"><span class="fa fa-envelope"></span></a>',
+                    '<a class="iconbar__top zoomUp" title="Увеличить"><span class="fa fa-search-plus"></span></a>',
+                    '<a class="iconbar__top zoomDown" title="Уменьшить"><span class="fa fa-search-minus"></span></a>',
+                    '<a class="iconbar__top" href="https://agrarnik.com/agrovopros/" title="Агровопрос"><span class="fa fa-question-circle"></span></a>',
+                    '<a class="iconbar__top" href="https://agrarnik.com/index.php?option=com_sppagebuilder&view=page&id=7&Itemid=433" title="Архив номеров"><span class="fa fa-file-text"></span></a>',
+                    '<a class="iconbar__top" href="https://www.facebook.com/AgrarNikwelcome/" title="Страница Facebook" ><span class="fa fa-facebook-square"></span></a>'
                 ]
             },
             sidebar		: {
@@ -44,9 +46,9 @@ $(document).ready(function() {
                 {
                     content		: [ '' ]
                 }, {
-                    content		: [ ' ' ]
+                    content		: [ '' ]
                 },{
-                    content		: [ 'prev', 'breadcrumbs', 'close']
+                    content		: [ 'prev' ]
                 }
             ]
             }, {
@@ -70,7 +72,7 @@ $(document).ready(function() {
         loop: true,
         items: 4,
         nav: false,
-        dots: false,
+        dots: true,
         margin: 15,
         autoplay: true,
         autoplayTimeout: 7000,
@@ -198,5 +200,13 @@ $(document).ready(function() {
         midClick: true
     });
 
+    $(function () {
+        setTimeout(function () {
+            //$("#menu").before("<div class=\"banner\"><img src='img/b.png' alt='alt'></div>");
+        }, 3000);
+        setTimeout(function () {
+            $(".banner").remove();
+        }, 43000);
+    });
 });
 

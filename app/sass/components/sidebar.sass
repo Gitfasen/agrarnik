@@ -7,9 +7,18 @@
       opacity: 0
     .main-icon-sidebar::before
       content: "\f0c9"!important
-    .mm-iconbar__bottom
+    .iconbar__top
       transition: all 0.25s ease
-      transform: translateY(270px)
+      transform: translatex(-50px)
+.mmcat
+  text-transform: none
+  font-size: 14px
+  &:hover .fa-circle
+    visibility: visible
+    color: #91D479!important
+  .fa-circle
+    font-size: 9px
+    visibility: hidden
 .mPS2id-highlight-first,
 .mPS2id-highlight
   color: $accent!important
@@ -96,7 +105,12 @@
   cursor: pointer
 .zoomActive
   max-width: 100%!important
-
+.mm-menu_theme-dark .mm-listview .mm-btn_next:after
+  border: none
+  content: "\f061"
+  font-family: "FontAwesome"
+  transform: rotate(0deg)
+  height: 20px
 @media screen and (max-width: 800px)
   .mm-listitem,
   .mm-listview
